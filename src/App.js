@@ -1,6 +1,7 @@
 import Movies from "./pages/Movies";
 import Navbar from "./shared/Navbar";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
       </Routes>
+      <Toaster />
 
     </div>
   );

@@ -25,11 +25,13 @@ const Movies = () => {
       .catch((err) => console.error(err));
     setLoading(false);
   }, []);
-  if (loading) <Loading />;
+  if (loading) {
+    return <Loading />;
+  }
   return (
-    <div className="grid grid-cols-4 gap-6 my-8 mx-8">
-      {movies?.results?.map((movie) => (
-        <Movie movie={movie} />
+    <div className="grid grid-cols-4 gap-6 my-8 mx-8 z-40">
+      {movies?.results?.map((movie, i) => (
+        <Movie key={i} movie={movie} />
       ))}
     </div>
   );
